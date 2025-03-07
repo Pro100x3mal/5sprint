@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	StepLength = 0.65
+// StepLength = 0.65
 )
 
 // создайте структуру DaySteps
