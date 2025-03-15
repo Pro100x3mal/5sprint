@@ -29,7 +29,7 @@ func (ds *DaySteps) Parse(datastring string) (err error) {
 	}
 	ds.Steps, err = strconv.Atoi(s[0])
 	if err != nil {
-		return errors.New("некорректное значение - необходимо целое число")
+		return fmt.Errorf("conversion error: %w", err)
 	}
 	ds.Duration, err = time.ParseDuration(s[1])
 	if err != nil {
