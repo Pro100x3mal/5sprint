@@ -39,7 +39,7 @@ func (t *Training) Parse(datastring string) (err error) {
 	case running:
 		t.TrainingType = s[1]
 	default:
-		return errors.New("некорректный тип тренировки (допустимые значения \"Бег\" или \"Ходьба\"")
+		return fmt.Errorf("некорректный тип тренировки (допустимые значения '%s' или '%s'", walking, running)
 	}
 	t.Duration, err = time.ParseDuration(s[2])
 	if err != nil {
